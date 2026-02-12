@@ -1,16 +1,9 @@
-# habit_tracker
+# Habit Tracker (Flutter)
 
-A new Flutter project.
+A habit tracking app built with **Flutter**, using **GetX** for state management and **Hive** for fast local storage. The codebase follows the **MVVM (Model–View–ViewModel)** architecture with GetX.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+- Weekly, Monthly, and Calendar views for tracking progress  
+- Heatmap visualization to create motivating patterns as habits are completed  
+- Offline-first experience with lightweight local persistence  
+- Clean, scalable architecture
