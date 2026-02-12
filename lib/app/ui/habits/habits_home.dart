@@ -6,6 +6,9 @@ import 'controller/habits_controller.dart';
 
 import 'widgets/empty_habits_widget.dart';
 import 'widgets/scrollable_weekly_view.dart';
+import 'widgets/month_view_widget.dart';
+import 'widgets/heatmap_view_widget.dart';
+import 'widgets/floating_view_toggle.dart';
 
 class HabitsHome extends StatefulWidget {
   const HabitsHome({Key? key}) : super(key: key);
@@ -163,17 +166,27 @@ class _HabitsHomeState extends State<HabitsHome> with SingleTickerProviderStateM
           return const EmptyHabitsWidget();
         }
 
-        return SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 40),
-              ScrollableWeeklyView(controller: habitsController),
-            ],
-          ),
+        return Stack(
+          children: [
+            SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 40),
+                  if (habitsController.is5DayView) ...[
+                    ScrollableWeeklyView(controller: habitsController),
+                  ] else if (habitsController.isMonthView) ...[
+                    MonthViewWidget(controller: habitsController),
+                  ] else if (habitsController.isHeatmapView) ...[
+                    HeatmapViewWidget(controller: habitsController),
+                  ],
+                ],
+              ),
+            ),
+            FloatingViewToggle(controller: habitsController),
+          ],
         );
       }),
     );
   }
 }
-

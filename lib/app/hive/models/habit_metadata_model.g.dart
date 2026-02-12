@@ -64,3 +64,5 @@ class HabitMetadataModelAdapter extends TypeAdapter<HabitMetadataModel> {
           typeId == other.typeId;
 }
 
+
+

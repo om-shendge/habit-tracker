@@ -52,3 +52,5 @@ class HabitCompletionModelAdapter extends TypeAdapter<HabitCompletionModel> {
           typeId == other.typeId;
 }
 
+
+

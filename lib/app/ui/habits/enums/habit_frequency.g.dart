@@ -50,3 +50,5 @@ class HabitFrequencyAdapter extends TypeAdapter<HabitFrequency> {
           typeId == other.typeId;
 }
 
+
+
